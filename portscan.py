@@ -15,7 +15,7 @@ def tcpscan(target, port_range):
 targetip = input("Enter target IP: ")
 include_ephemeral = input("Include ephemeral (Y/N): ").strip().upper() == "Y"
 ports = 65535 if include_ephemeral else 1024
-processes = 64 # Increase or decrease as needed. Higher value = faster scanning
+processes = 64 # Increase or decrease as needed. Higher value = faster scanning but also higher CPU usage
 chunks = ports // processes
 
 ranges = [
