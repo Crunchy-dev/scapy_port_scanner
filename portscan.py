@@ -8,7 +8,7 @@ def tcpscan(target, port_range):
         response = sr1(IP(dst=target) / TCP(dport=port, flags="S"), timeout=3, verbose=0)
         if response and response.haslayer(TCP) and response[TCP].flags == "SA":
             tcpopen.append(port)
-            print(f"Port {port} is open")
+            print(f"Port {port} is OPEN")
 
 targetip = input("Enter target IP: ")
 include_ephemeral = input("Include ephemeral (Y/N): ").strip().upper() == "Y"
